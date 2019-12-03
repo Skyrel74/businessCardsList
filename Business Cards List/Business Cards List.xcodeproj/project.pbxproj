@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52A95EFF2395604700ADC96B /* Business Cards List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52A95EFD2395604700ADC96B /* Business Cards List.xcdatamodeld */; };
+		52A95F01239560FC00ADC96B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A95F00239560FC00ADC96B /* CoreDataStack.swift */; };
+		52A95F0823956E4100ADC96B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A95F0723956E4100ADC96B /* AddViewController.swift */; };
 		904982242392B4CC00FF4D3D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904982232392B4CC00FF4D3D /* Card.swift */; };
 		90E90A7E239280A8009E1DAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E90A7D239280A8009E1DAF /* AppDelegate.swift */; };
 		90E90A80239280A8009E1DAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E90A7F239280A8009E1DAF /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52A95EFE2395604700ADC96B /* Business Cards List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Business Cards List.xcdatamodel"; sourceTree = "<group>"; };
+		52A95F00239560FC00ADC96B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		52A95F0723956E4100ADC96B /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		904982232392B4CC00FF4D3D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		90E90A7A239280A8009E1DAF /* Business Cards List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Business Cards List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E90A7D239280A8009E1DAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52A95F02239561FE00ADC96B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				52A95F00239560FC00ADC96B /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		904982222392B49300FF4D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,9 +83,11 @@
 				904982222392B49300FF4D3D /* Models */,
 				90E90A8F239280E2009E1DAF /* ViewControllers */,
 				90E90A7D239280A8009E1DAF /* AppDelegate.swift */,
+				52A95F02239561FE00ADC96B /* CoreData */,
 				90E90A81239280A8009E1DAF /* Main.storyboard */,
 				90E90A84239280AA009E1DAF /* Assets.xcassets */,
 				90E90A86239280AA009E1DAF /* LaunchScreen.storyboard */,
+				52A95EFD2395604700ADC96B /* Business Cards List.xcdatamodeld */,
 				90E90A89239280AA009E1DAF /* Info.plist */,
 			);
 			path = "Business Cards List";
@@ -81,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				90E90A7F239280A8009E1DAF /* ViewController.swift */,
+				52A95F0723956E4100ADC96B /* AddViewController.swift */,
 				90E90A902392A3FB009E1DAF /* CardVC.swift */,
 			);
 			path = ViewControllers;
@@ -159,6 +176,9 @@
 			files = (
 				90E90A80239280A8009E1DAF /* ViewController.swift in Sources */,
 				90E90A912392A3FB009E1DAF /* CardVC.swift in Sources */,
+				52A95F0823956E4100ADC96B /* AddViewController.swift in Sources */,
+				52A95EFF2395604700ADC96B /* Business Cards List.xcdatamodeld in Sources */,
+				52A95F01239560FC00ADC96B /* CoreDataStack.swift in Sources */,
 				90E90A7E239280A8009E1DAF /* AppDelegate.swift in Sources */,
 				904982242392B4CC00FF4D3D /* Card.swift in Sources */,
 			);
@@ -358,6 +378,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		52A95EFD2395604700ADC96B /* Business Cards List.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				52A95EFE2395604700ADC96B /* Business Cards List.xcdatamodel */,
+			);
+			currentVersion = 52A95EFE2395604700ADC96B /* Business Cards List.xcdatamodel */;
+			path = "Business Cards List.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 90E90A72239280A7009E1DAF /* Project object */;
 }
