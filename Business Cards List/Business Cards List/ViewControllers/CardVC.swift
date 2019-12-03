@@ -13,7 +13,8 @@ class CardVC: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconImg: UIImageView!
     
-    func setup(with text: String, and iconName: String?) {
-        nameLabel.text = text
+    func setup(with card: Card) {
+        nameLabel.text = card.name
+        
     }
 }

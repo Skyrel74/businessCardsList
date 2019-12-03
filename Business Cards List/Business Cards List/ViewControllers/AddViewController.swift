@@ -17,20 +17,19 @@ class AddViewController: UIViewController {
     @IBOutlet weak var name: UITextField!
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
     @IBAction func saveCard(_ sender: Any) {
         let id = "Test"
         let name = self.name.text!
         let descriptiontext = self.descriptionText.text!
         save(id: id, name: name, descriptiontext: descriptiontext)
-        
+        API.createCard(name: name, description: descriptiontext){ result in
+            guard result else { return }
+        }
     }
     
     func save(id: String, name: String, descriptiontext: String) {
@@ -45,7 +44,6 @@ class AddViewController: UIViewController {
         } catch let error as NSError {
             print("Couldn't save. \(error)")
         }
-        
     }
 
     func delete(_ visitka: NSManagedObject, at indexPath: IndexPath) {
