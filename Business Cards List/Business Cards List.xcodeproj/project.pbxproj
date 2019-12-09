@@ -7,33 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42BD16232396471800C8CDBE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BD16222396471800C8CDBE /* API.swift */; };
 		52A95EFF2395604700ADC96B /* Business Cards List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52A95EFD2395604700ADC96B /* Business Cards List.xcdatamodeld */; };
 		52A95F01239560FC00ADC96B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A95F00239560FC00ADC96B /* CoreDataStack.swift */; };
-		52A95F0823956E4100ADC96B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A95F0723956E4100ADC96B /* AddViewController.swift */; };
-		904982242392B4CC00FF4D3D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904982232392B4CC00FF4D3D /* Card.swift */; };
+		52FE6ABB239E35D800C58F9F /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6AB7239E35D800C58F9F /* AddViewController.swift */; };
+		52FE6ABC239E35D800C58F9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6AB8239E35D800C58F9F /* ViewController.swift */; };
+		52FE6ABE239E35D800C58F9F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6ABA239E35D800C58F9F /* CardViewController.swift */; };
+		52FE6AC1239E35E800C58F9F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6ABF239E35E800C58F9F /* API.swift */; };
+		52FE6AC2239E35E800C58F9F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6AC0239E35E800C58F9F /* Card.swift */; };
+		52FE6AC5239E369900C58F9F /* Visitka+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6AC3239E369900C58F9F /* Visitka+CoreDataClass.swift */; };
+		52FE6AC6239E369900C58F9F /* Visitka+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6AC4239E369900C58F9F /* Visitka+CoreDataProperties.swift */; };
 		90E90A7E239280A8009E1DAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E90A7D239280A8009E1DAF /* AppDelegate.swift */; };
-		90E90A80239280A8009E1DAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E90A7F239280A8009E1DAF /* ViewController.swift */; };
 		90E90A83239280A8009E1DAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E90A81239280A8009E1DAF /* Main.storyboard */; };
 		90E90A85239280AA009E1DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90E90A84239280AA009E1DAF /* Assets.xcassets */; };
 		90E90A88239280AA009E1DAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E90A86239280AA009E1DAF /* LaunchScreen.storyboard */; };
-		90E90A912392A3FB009E1DAF /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E90A902392A3FB009E1DAF /* CardVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		42BD16222396471800C8CDBE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		52A95EFE2395604700ADC96B /* Business Cards List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Business Cards List.xcdatamodel"; sourceTree = "<group>"; };
 		52A95F00239560FC00ADC96B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		52A95F0723956E4100ADC96B /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		904982232392B4CC00FF4D3D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		52FE6AB7239E35D800C58F9F /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		52FE6AB8239E35D800C58F9F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52FE6ABA239E35D800C58F9F /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		52FE6ABF239E35E800C58F9F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		52FE6AC0239E35E800C58F9F /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		52FE6AC3239E369900C58F9F /* Visitka+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visitka+CoreDataClass.swift"; sourceTree = "<group>"; };
+		52FE6AC4239E369900C58F9F /* Visitka+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visitka+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		90E90A7A239280A8009E1DAF /* Business Cards List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Business Cards List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E90A7D239280A8009E1DAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90E90A7F239280A8009E1DAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90E90A82239280A8009E1DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90E90A84239280AA009E1DAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90E90A87239280AA009E1DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90E90A89239280AA009E1DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90E90A902392A3FB009E1DAF /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 		52A95F02239561FE00ADC96B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				52FE6AC3239E369900C58F9F /* Visitka+CoreDataClass.swift */,
+				52FE6AC4239E369900C58F9F /* Visitka+CoreDataProperties.swift */,
 				52A95F00239560FC00ADC96B /* CoreDataStack.swift */,
 			);
 			path = CoreData;
@@ -58,8 +64,8 @@
 		904982222392B49300FF4D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				904982232392B4CC00FF4D3D /* Card.swift */,
-				42BD16222396471800C8CDBE /* API.swift */,
+				52FE6ABF239E35E800C58F9F /* API.swift */,
+				52FE6AC0239E35E800C58F9F /* Card.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,9 +105,9 @@
 		90E90A8F239280E2009E1DAF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				90E90A7F239280A8009E1DAF /* ViewController.swift */,
-				52A95F0723956E4100ADC96B /* AddViewController.swift */,
-				90E90A902392A3FB009E1DAF /* CardVC.swift */,
+				52FE6AB7239E35D800C58F9F /* AddViewController.swift */,
+				52FE6ABA239E35D800C58F9F /* CardViewController.swift */,
+				52FE6AB8239E35D800C58F9F /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,14 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90E90A80239280A8009E1DAF /* ViewController.swift in Sources */,
-				90E90A912392A3FB009E1DAF /* CardVC.swift in Sources */,
-				52A95F0823956E4100ADC96B /* AddViewController.swift in Sources */,
+				52FE6ABC239E35D800C58F9F /* ViewController.swift in Sources */,
+				52FE6AC2239E35E800C58F9F /* Card.swift in Sources */,
+				52FE6AC6239E369900C58F9F /* Visitka+CoreDataProperties.swift in Sources */,
+				52FE6ABE239E35D800C58F9F /* CardViewController.swift in Sources */,
 				52A95EFF2395604700ADC96B /* Business Cards List.xcdatamodeld in Sources */,
 				52A95F01239560FC00ADC96B /* CoreDataStack.swift in Sources */,
+				52FE6ABB239E35D800C58F9F /* AddViewController.swift in Sources */,
+				52FE6AC1239E35E800C58F9F /* API.swift in Sources */,
 				90E90A7E239280A8009E1DAF /* AppDelegate.swift in Sources */,
-				42BD16232396471800C8CDBE /* API.swift in Sources */,
-				904982242392B4CC00FF4D3D /* Card.swift in Sources */,
+				52FE6AC5239E369900C58F9F /* Visitka+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

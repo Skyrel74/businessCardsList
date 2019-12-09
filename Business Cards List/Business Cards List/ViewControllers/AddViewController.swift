@@ -12,50 +12,44 @@ import CoreData
 class AddViewController: UIViewController {
     
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionText: UITextField!
     @IBOutlet weak var name: UITextField!
+    
+    var titleText = "Добавить Визитку"
+    var card: NSManagedObject? = nil
+    var indexPathForCard: IndexPath? = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = titleText
+        if let card = self.card {
+            name.text = card.value(forKey: "name") as? String
+            descriptionText.text = card.value(forKey: "descriptionText") as? String
+        }
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func saveCard(_ sender: Any) {
-        let id = "Test"
-        let name = self.name.text!
-        let descriptiontext = self.descriptionText.text!
-        save(id: id, name: name, descriptiontext: descriptiontext)
-        API.createCard(name: name, description: descriptiontext){ result in
-            guard result else { return }
-        }
-    }
     
-    func save(id: String, name: String, descriptiontext: String) {
-        let managedObjectContext = CoreDataStack.sharedInstance.persistentContainer.viewContext
-        guard let entity = NSEntityDescription.entity(forEntityName:"Visitka", in: managedObjectContext) else { return }
-        let visitka = NSManagedObject(entity: entity, insertInto: managedObjectContext)
-        visitka.setValue(id, forKey: "id")
-        visitka.setValue(name, forKey: "name")
-        visitka.setValue(descriptiontext, forKey: "descriptiontext")
-        do {
-            try managedObjectContext.save()
-        } catch let error as NSError {
-            print("Couldn't save. \(error)")
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
-    func delete(_ visitka: NSManagedObject, at indexPath: IndexPath) {
-        let managedObjectContext = CoreDataStack.sharedInstance.persistentContainer.viewContext
-        managedObjectContext.delete(visitka)
-        do {
-            try managedObjectContext.save()
-        } catch let error as NSError {
-            print("Couldn't save. \(error)")
-        }
-        
+    @IBAction func saveAndClose(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToCardList", sender: self)
     }
+    
+    @IBAction func close(_ sender: Any) {
+        name.text = nil
+        descriptionText.text = nil
+        performSegue(withIdentifier: "unwindToCardList", sender: self)
+    }
+    
+    
+
+    
+    
     /*
     // MARK: - Navigation
 

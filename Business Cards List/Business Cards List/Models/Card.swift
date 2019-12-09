@@ -10,16 +10,16 @@ class Card {
     
     static var shared = [Card]()
     
-    var id: String
+    var idCard: String?
     var name: String?
     var description: String?
-    var iconName: String?
+//    var iconName: String?
     
-    init(id: String, data: JSON) {
-        self.id     = id
+    init(data: JSON) {
+        self.idCard = data["idCard"] as! String?
         self.name  = data["name"] as! String?
         self.description   = data["description"] as! String?
-        self.iconName   = data["iconName"] as! String?
+//        self.iconName   = data["iconName"] as! String?
         
         // MARK: - Initialization
     
