@@ -7,11 +7,12 @@ enum API {
     static var identifier: String { return "GroupNapoleon-IT2"}
     static var baseURL: String { return "https://ios-napoleonit.firebaseio.com/data/\(identifier)/" }
     
-    static func createCard(idCard: String, name: String, description: String, complition: @escaping (Bool) -> Void){
+    static func createCard(idCard: String, name: String, description: String, imageString: String, complition: @escaping (Bool) -> Void){
         let params = [
             "idCard": idCard,
             "name": name,
             "description": description,
+            "imageString": imageString,
             ]
         let url = URL(string: baseURL + "/cards/\(idCard)/.json")!
         var request = URLRequest(url: url)
@@ -25,14 +26,18 @@ enum API {
             complition(error == nil)
         }
         task.resume()
+        editCard(idCard: idCard, name: name, description: description, imageString: imageString) { result in
+            guard result else { return }
+        }
         
     }
     
-    static func editCard(idCard: String, name: String, description: String, completion: @escaping (Bool) -> Void) {
+    static func editCard(idCard: String, name: String, description: String, imageString: String, completion: @escaping (Bool) -> Void) {
         let params = [
             "idCard": idCard,
             "name": name,
             "description": description,
+            "imageString": imageString,
         ]
         
         let url = URL(string: baseURL + "/cards/\(idCard)/.json")!

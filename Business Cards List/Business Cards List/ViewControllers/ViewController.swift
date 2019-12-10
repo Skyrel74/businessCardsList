@@ -6,16 +6,18 @@
 //  Copyright © 2019 Ilya. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreData
 
 var vc = ViewController()
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
  
     @IBOutlet weak var tableView: UITableView!
     
+    var coreImage: UIImage? = nil
     var cardsCore: [NSManagedObject] = []
     
     private var cards = [Card]() {
@@ -34,14 +36,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         clearData()
         downloadCards() { [weak self] in
             self?.fetch()
             self?.tableView.reloadData()
         }
+//        print(cards)
         tableView.reloadData()
-        
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
     
 //--------> CoreDataManager
     func fetch() {
@@ -67,6 +81,7 @@ class ViewController: UIViewController {
                 card.setValue(cardEntity.idCard, forKey: "idCard")
                 card.setValue(cardEntity.name, forKey: "name")
                 card.setValue(cardEntity.description, forKey: "descriptionText")
+                card.setValue(cardEntity.imageString, forKey: "imageString")
                 do {
                     try managedObjectContext.save()
                 } catch let error as NSError {
@@ -95,7 +110,7 @@ class ViewController: UIViewController {
     }
     
     
-    func save(name: String, description: String) {
+    func save(imageString: String, name: String, description: String) {
         let uuid = UUID().uuidString
         let managedObjectContext = CoreDataStack.sharedInstance.persistentContainer.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName:"Visitka", in: managedObjectContext) else { return }
@@ -103,10 +118,11 @@ class ViewController: UIViewController {
         card.setValue(name, forKey: "name")
         card.setValue(description, forKey: "descriptionText")
         card.setValue(uuid, forKey: "idCard")
+        card.setValue(imageString, forKey: "imageString")
         do {
             try managedObjectContext.save()
             self.cardsCore.append(card)
-            API.createCard(idCard: uuid, name: name, description: description) { result in
+            API.createCard(idCard: uuid, name: name, description: description, imageString: imageString) { result in
                 guard result else { return }
             }
         } catch let error as NSError {
@@ -114,16 +130,17 @@ class ViewController: UIViewController {
         }
     }
     
-    func update(indexPath: IndexPath, name: String, description: String) {
+    func update(indexPath: IndexPath, name: String, description: String, imageString: String) {
         let managedObjectContext = CoreDataStack.sharedInstance.persistentContainer.viewContext
         let card = cardsCore[indexPath.row]
         guard let idCard = card.value(forKey: "idCard") as? String else { return }
         card.setValue(name, forKey:"name")
         card.setValue(description, forKey: "descriptionText")
+        card.setValue(imageString, forKey: "imageString")
         do {
             try managedObjectContext.save()
             cardsCore[indexPath.row] = card
-            API.editCard(idCard: idCard, name: name, description: description) { result in
+            API.editCard(idCard: idCard, name: name, description: description, imageString: imageString) { result in
                 guard result else { return }
             }
         } catch let error as NSError {
@@ -151,12 +168,12 @@ class ViewController: UIViewController {
     
     @IBAction func unwindToCardList(segue: UIStoryboardSegue) {
         if let viewController = segue.source as? AddViewController {
-            guard let name: String = viewController.name.text, let description: String = viewController.descriptionText.text else { return }
-            if name != "" && description != "" {
+            guard let name: String = viewController.name.text, let description: String = viewController.descriptionText.text, let imageString: String = viewController.imageStringData else { return }
+            if name != "" && description != "" && imageString != "" {
                 if let indexPath = viewController.indexPathForCard {
-                    update(indexPath: indexPath, name: name, description: description)
+                    update(indexPath: indexPath, name: name, description: description, imageString: imageString)
                 } else {
-                    save(name:name, description: description)
+                    save(imageString: imageString, name: name, description: description)
                 }
             }
             tableView.reloadData()
@@ -186,6 +203,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
 }
 
     extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -197,7 +218,13 @@ class ViewController: UIViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
 //        cell.setup(with: cards[indexPath.row])
         let card = cardsCore[indexPath.row]
-        cell.detailTextLabel?.text = card.value(forKey: "name") as? String
+        let imageString = card.value(forKey: "imageString") as! String
+        let imageData = NSData(base64Encoded: imageString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)! as Data
+        let imageCell: UIImage = UIImage(data: imageData)!
+        cell.imageView?.image = imageCell
+        cell.contentMode = .scaleAspectFill
+        coreImage = imageCell
+        cell.textLabel?.text = card.value(forKey: "name") as? String
         return cell
     }
     

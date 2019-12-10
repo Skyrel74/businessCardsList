@@ -20,5 +20,6 @@ extension Visitka {
     @NSManaged public var descriptionText: String?
     @NSManaged public var idCard: String?
     @NSManaged public var name: String?
+    @NSManaged public var imageString: String?
 
 }

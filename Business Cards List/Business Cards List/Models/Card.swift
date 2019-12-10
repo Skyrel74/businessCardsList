@@ -13,12 +13,14 @@ class Card {
     var idCard: String?
     var name: String?
     var description: String?
+    var imageString: String?
 //    var iconName: String?
     
     init(data: JSON) {
         self.idCard = data["idCard"] as! String?
-        self.name  = data["name"] as! String?
-        self.description   = data["description"] as! String?
+        self.name = data["name"] as! String?
+        self.description = data["description"] as! String?
+        self.imageString = data["imageString"] as! String?
 //        self.iconName   = data["iconName"] as! String?
         
         // MARK: - Initialization

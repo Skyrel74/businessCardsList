@@ -3,9 +3,10 @@
     <entity name="Visitka" representedClassName="Visitka" syncable="YES">
         <attribute name="descriptionText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idCard" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Visitka" positionX="-54" positionY="-9" width="128" height="88"/>
+        <element name="Visitka" positionX="-54" positionY="-9" width="128" height="103"/>
     </elements>
 </model>
